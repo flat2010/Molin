@@ -27,8 +27,12 @@ widgets:
   - tag
   - archive
   #- weibo
+  - github
   - links
 
+github:
+    - title: flat2010
+      url: https://github.com/flat2010
 # Toc
 toc:
   enable: true
@@ -69,7 +73,7 @@ local_search: true ## Use a javascript-based local search engine, true/false.
 #Cmments
 comment:
   duoshuo: #chaooo ## duoshuo_shortname
-  disqus: ## disqus_shortname
+  disqus: flat2010
   livere: ## 来必力(data-uid)
   uyan: ## 友言(uid)
   cloudTie: ## 网易云跟帖(productKey)
@@ -98,31 +102,40 @@ show_category_count: true ## If you want to show the count of categories in the 
 widgets_on_small_screens: true ## Set to true to enable widgets on small screens.
 busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
 
+# Enable show category count
+show_count: true
+
 # About page
 about:
-  photo_url: http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg ## Your photo e.g. http://obzf7z93c.bkt.clouddn.com/themeauthor.jpg
+  photo_url: me.jpg
   items:
   - label: email
     url: ## Your email with mailto: e.g.  mailto:zhenggchaoo@gmail.com
-    title: ## Your email e.g.  zhenggchaoo@gmail.com
+    title: 想查水表?
   - label: github
-    url: ## Your github'url e.g.  https://github.com/chaooo
-    title: ## Your github'name e.g.  chaooo
+    url: flat2010.github.io
+    title: flat2010
   - label: weibo
-    url: ## Your weibo's url e.g.  http://weibo.com/zhengchaooo
-    title: ## Your weibo's name e.g.  秋过冬漫长
-# - label: twitter
-#   url: 
-#   title:
+    url: 
+    title: 暂未开通
+#  - label: twitter
+#    url: 
+#    title: 
 # - label: facebook
 #   url:
 #   title:
 
 # Links widget. Empty links will hide widget.
 links:
-  - title: site-name1
-    url: http://www.example1.com/
-  - title: site-name2
-    url: http://www.example2.com/
-  - title: site-name3
-    url: http://www.example3.com/
+#  - title: site-name1
+#    url: http://www.example1.com/
+#  - title: site-name2
+#    url: http://www.example2.com/
+#  - title: site-name3
+#    url: http://www.example3.com/
+
+# MathJax Support
+mathjax:
+  enable: true
+  # per_page: true
+  cdn: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML

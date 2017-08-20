@@ -1,7 +1,5 @@
 /* syntax highlight*/
-highlight-background = #2d2d2d
-codeblock-radius = 20px
-pre
+pre 
   width: 100%      
   position: relative
   border: none
@@ -22,19 +20,18 @@ pre
     color: #333
     background: #f7f8f8
 figure.highlight,.codeblock
-  background: #2d2d2d
-  line-height: 1.5em
+  background: #f7f8f8
+  margin: 10px 0
+  line-height: 1.1em
   padding-top: 15px
-  margin: auto
-  border-radius: codeblock-radius
+  margin: 1em 0
+  border-radius: 5px
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
   figcaption
     font-size: 13px
-    //修改代码块说明的位置上、左、下、右
-    padding: 0 10px 10px 10px
+    padding: 0 15px 20px
     margin: 0
-    //修改代码块说明
-    background: highlight-background
+    background: #f7f8f8
     color: #999999
     a
       float: right
@@ -44,9 +41,7 @@ figure.highlight,.codeblock
     width: 100%
     margin: 0
     padding-bottom: 10px
-    //设置代码块的圆角半径
     border-collapse: collapse
-    //end
     position: relative
     display block 
     overflow-x: auto
@@ -63,19 +58,14 @@ figure.highlight,.codeblock
     .gutter
       display: none
   .gutter
-    background: #2d2d2d
-    //行号右边的竖线
-    //border-right: 1px solid #e6e6e6
-    padding: 0.3em 5px
-    //设置代码块行号的圆角半径
-    border-radius: codeblock-radius
-    //end
+    background: #f7f8f8
+    border-right: 1px solid #e6e6e6
+    padding: 0.3em 15px
     .line
       color: #aaaaaa
   .line
     font-size: 13px
-    color: #cccccc
-    text-align: right
+    color: #333
     &.marked
       background: #f5e3de
 
@@ -92,14 +82,12 @@ figure.highlight,.codeblock
   .comment
   .title
     color: #888
-  .meta
-    color: #470AFF //add  
+  .meta 
   .tag
     color: #324977
   .attr
     color: #118a04
-  .string
-    color: #A3FFC2 //add
+  .string,
   .value,
   .inheritance,
   .header,
@@ -127,15 +115,13 @@ figure.highlight,.codeblock
   &.bash 
     .code 
       .literal,.built_in
-        //color: #0086b3
-        color: #f99157
+        color: #0086b3
       .title
         color: #795da3
       .shebang
         color: #969896
       .variable
-        //color: #333
-        color: #FF5CFF
+        color: #333
   &.coffeescript 
     .code 
       .subst,.regexp,.attribute

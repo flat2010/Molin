@@ -65,3 +65,12 @@ html(lang='#{config.language}')
       include _partial/footer
     include _partial/after_footer
     block pageOnly
+
+//为主题添加mathjax支持
+script(type='text/javascript', src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML', async)
+script(type='text/x-mathjax-config').
+  MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+  tex2jax: { inlineMath: [ ["$", "$"], ["\\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+  TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+  messageStyle: "none"
+  });

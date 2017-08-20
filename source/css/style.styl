@@ -1,4 +1,7 @@
 /* reset */
+bottom-border = #ddd
+table-border-width = 3px
+
 body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,img,blockquote,button,pre,fieldset,form,input,select,option
   margin: 0
   padding: 0
@@ -203,6 +206,8 @@ body
     box-shadow: 1px 2px 3px #adc2d7
     border: 1px solid #adc2d7
     background: #FFF
+    //侧边栏增加圆角矩形
+    border-radius: 20px
     a 
       color:#333
       &:hover 
@@ -210,17 +215,20 @@ body
         text-decoration underline
     .widget-title,.comments-title
       color: #40759b
-      line-height: 2.7
+      line-height: 2.0
       margin-top: 0
-      font-size: 16px
+      font-size: 25px
       border-bottom: 1px solid #d8e2eb
       display: block
-      font-weight: normal
+      font-weight: bold
     .tagcloud
+      //background: #222
       margin-top: 10px
       a
         line-height: 1.5
         padding: 5px
+        //设置彩色标签云不允许单词跨行
+        word-break: keep-all
     ul,ol
       list-style: none
       padding: 0
@@ -231,6 +239,16 @@ body
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+    // 给侧边栏"归档"添加文章统计数量并设置数字格式
+    .archive-list-count
+      padding-left: 8px
+      //font-weight bold
+      color: #40759b
+      &:before
+        content: "[ "
+      &:after
+        content: " ]"
+    //end
     .category-list-count
       padding-left: 5px
       color: #40759b
@@ -360,6 +378,9 @@ body
   box-shadow: 1px 2px 3px #ADC2D7
   border: 1px solid #ADC2D7
   margin-bottom: 40px
+  //文章预览增加圆角矩形
+  border-radius: 25px
+  //end
   .post-title
     margin: 0
     color: #40759b
@@ -417,6 +438,9 @@ body
         font-family: "iconfont"!important
         content: "\e00d"
         padding-right: 0.3em
+      //在文章阅读次数和"阅读"之间添加一个空格
+      &:after
+        content: " "
   .comment-count
     float: right
     display: inline-block
@@ -435,7 +459,7 @@ body
   .post-content
     clear: left
     font-size: 15px
-    line-height: 1.77
+    line-height: 1.80
     color: #333
     padding-top: 15px
     text-align: justify
@@ -443,10 +467,28 @@ body
     word-break: normal
     h2
       font-size: 18px
+      //修改2号标题断后间隔，对标题加入圆角背景，以及背景覆盖宽度
+      margin: 0 0 0.5em
+      border-radius: 8px
+      background: #70B8FF
+      width: 50%
+      //end
     h3
       font-size: 16px
+      //修改3号标题断后间隔，对标题加入圆角背景，以及背景覆盖宽度
+      margin: 0 0 0.5em
+      border-radius: 10px
+      background: #9999FF
+      width: 60%
+      //end
     h4
       font-size: 14px
+      //修改2号标题断后间隔，对标题加入圆角背景，以及背景覆盖宽度
+      margin: 0 0 0.5em
+      border-radius: 12px
+      background: #00B8B8
+      width: 70%
+      //end
     h5
       font-size: 13px
     h6
@@ -726,7 +768,9 @@ body
     color: #40759b
     margin: -20px 0 0
     padding: 5px 10px
+    //阅读全文按钮改为圆角矩形
     float: right
+    border-radius: 15px
     &:after
       content: ">>"
       padding-left: 0.15em
@@ -871,21 +915,34 @@ table,tbody,tr,th,td
   margin 0
 table
   margin: auto auto 15px
+  //解决某些表格宽度与页面不一致问题
+  //display: block
   width: 100%
+  //end
   background: transparent
   overflow-x: auto
-  display: block
+  border-collapse: collapse
+  border-spacing: 0
+  //表格底部添加粗横线
+  border-bottom: table-border-width solid bottom-border
   th
     font-weight: bold
     padding: 5px 10px
-    border: 1px solid #d8e2eb
+    //去掉表格边框，做成三线表格，显得更专业
+    //border: 1px solid #d8e2eb
+    border-bottom: table-border-width solid bottom-border
     border-bottom-width: 2px
+    border-top: table-border-width solid bottom-border
+    //end
   tr
     &:nth-child(2n)
       background: #f4fcff
   td
     padding: 5px 10px
-    border 1px solid #d8e2eb
+    //去掉表格边框，做成三线表格，显得更专业
+    //border 1px solid #d8e2eb
+    border-bottom: 1px solid #ddd
+    padding: 10px 0
 @media print,screen and (max-width : 56.25em)
   .body_container
     padding: 0 30px
