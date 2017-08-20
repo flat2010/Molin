@@ -2,43 +2,44 @@
 
 [English](README.en.md) | [简体中文](README.md)
 
-一个简洁轻量化的响应式[Hexo](https://hexo.io/)博客主题。
+A simple theme for [Hexo](https://hexo.io/) with great performance on different devices .
 
-- [点击预览](http://chaoo.oschina.io/)
+- [Preview](http://chaoo.oschina.io/)
 
 [![BlueLake template preview](http://obzf7z93c.bkt.clouddn.com/themeBlueLake.png "BlueLake template preview")](http://chaoo.oschina.io/)
 
-## 安装
+## Installation
 
-### 安装主题和渲染:
+### Install theme and renderers:
 
 ```shell
 $ git clone https://github.com/chaooo/hexo-theme-BlueLake.git themes/BlueLake
 $ npm install hexo-renderer-jade@0.3.0 --save
 $ npm install hexo-renderer-stylus --save
 ```
-### 启用
 
-在Hexo配置文件（`hexo/_config.yml`）中把主题设置修改为`BlueLake`。
+### Enable
+
+Modify `theme` setting in `_config.yml` to `BlueLake`.
 ```  bash
 theme: BlueLake
 ```
-如果你想生成压缩后的css，在（`hexo/_config.yml`）中添加：
+If you want to compress css,you can configure this plugin in `hexo/_config.yml`
 ``` yml
 stylus:
   compress: true
 ```
 
-
-### 更新
+### Update
 
 ``` bash
 cd themes/BlueLake
 git pull
 ```
 
-## 配置
-打开`themes/BlueLake/_config.yml`进行配置。
+## Configuration
+
+`themes/BlueLake/_config.yml`
 
 ``` yml
 ##########################
@@ -157,61 +158,64 @@ links:
     url: http://www.example3.com/
 ```
 
-- **version** - 用于自动刷新CDN上的静态文件。
-- **menu** - 导航菜单。
-- **widgets** - 侧边栏中的窗口小部件。
-- **Toc** - 文章目录
-- **Static files** - 静态文件目录，以方便CDN使用。
+- **version** - For automatic refresh of static files on CDN.
+- **menu** - Navigation menu,just follow the format of existied items.
+- **widgets** - Widgets displaying in sidebar.
+- **Static files** - Static files directory, for convenience of CDN usage.
 - **Local search**
-- self_search - 默认本地JS搜索.
+- local_search - a javascript-based local search engine, true/false.
+- swiftype - [Swiftype Search](https://swiftype.com) key.
+- tinysou - [Tiny Search](http://tinysou.com) key.
 - **Cmments**
-- duoshuo - 若使用[多说评论](http://duoshuo.com)，注册多说后在这填写short_name(用于评论与分享)。
-- disqus - 若使用[Disqus评论](https://disqus.com)，注册Disqus后在这填写short_name。
-- livere- 若使用[来必力评论](https://livere.com)，注册来必力,获得data-uid。
-- uyan - 若使用[友言评论](http://www.uyan.cc/)，注册友言,获得uid。
-- cloudTie - 若使用[网易云跟帖评论](https://gentie.163.com/info.html)，注册网易云跟帖,获得productKey。
-- changyan - 若使用[畅言评论](http://changyan.kuaizhan.com)，注册畅言，获得appid，appkey。
-- **About page** - 关于我页面(hexo new page 'about')。
-- **links** - 友情链接。
+- duoshuo - [Duoshuo](http://duoshuo.com) shortname(Use for comments and sharing).
+- disqus - [Disqus](https://disqus.com) shortname.
+- **About page** - About page set.
+- **links** - Edit your blogroll here.
 - **Miscellaneous**
-- show_category_count - 是否在侧边栏分类中显示类别的数量（true/false）.
-- widgets_on_small_screens - 小屏幕下侧边栏在底部显示.
-- busuanzi - 用[Busuanzi](http://busuanzi.ibruce.info)来统计网站访问量.
-- google_analytics - [Google Analytics](https://www.google.com/analytics/) tracking ID。
-- baIDu_analytics - [Baidu Analytics](http://tongji.baidu.com) tracking ID。
+- show_category_count - Show the count of categories in the sidebar widget.
+- widgets_on_small_screens - Show the widgets at the bottom of small screens.
+- busuanzi - Enable [Busuanzi](http://busuanzi.ibruce.info) page views.
+- google_analytics - [Google Analytics](https://www.google.com/analytics/) tracking ID.
+- baidu_analytics - [Baidu Analytics](http://tongji.baidu.com) tracking ID.
 
-## 特征
 
-#### 站点图标
-您可以准备一张ico格式并命名为** favicon.ico **，请将其放入hexo目录的`source`文件夹，建议大小：32px * 32px。
+## Features
 
-您可以为苹果设备添加网站徽标，请将名为** apple-touch-icon.png **的图像放入hexo目录的“source”文件夹中，建议大小为：114px * 114px。
+#### Logo
+You can set a **favicon.ico** for your website, please put it into  `source` folder of hexo directory, recommended size: 32px*32px.
 
-#### 添加站点关键字
-请在hexo目录的“hexo/_config.yml”中添加`keywords`字段，如：
-```YAML
+You can add a website logo for apple devices, please put an image named **apple-touch-icon.png** into `source` folder of hexo directory, recommended size: 114px*114px.
+
+#### Keywords
+please set the `keywords` option in `hexo/_config.yml` of hexo directory like this:
 # Site
+```
 title: Hexo
-subtitle: 副标题
-description: 网站简要描述,如：Charles·Zheng's blog.
-keywords: 网站关键字, key, key1, key2, key3
-author: Charles
-language: zh-CN
+subtitle:
+description:
+keywords: keywords1, keywords2, keywords3, ...
 ```
 
-#### 设置阅读全文
-您可以在文章的 front-matter 中添加 description，并提供文章摘录，或在文章中使用‘‘`<!--more-->`’’手动进行截断（Hexo推荐的方式）。
+#### Abstract
+You can control the abstract of a post shown at index, by either filling a `description:` item in `front-matter` of the `post.md`, or just inserting a `<!--more-->` before your hidden content.
 
-#### 自定义page页面
-在`source`文件夹中创建文件夹`index.md`来添加页面，并在`index.md`的`front-matter'中添加`layout：page`。
+#### Page
 Create folders inlcuding `index.md` in `source` folder to add pages, and add a `layout: page` in `front-matter` of `index.md`.
 
-#### About页面
-此主题默认page页面是关于我页面的布局，生成一个关于我页面：
+#### About Page
+If you want to add about page, just create a page:
 ``` shell
 $ hexo new page 'about'
 ```
-配置照片地址、邮箱、微博链接、微博名、GitHub链接、Github名：
+And add `is_about: true` to front-matter:
+```
+title: about
+date: 2017-04-30 00:00:00
+is_about: true
+---
+Page content ...
+```
+And set the `about` option in `themes/_config.yml`
 ```YAML
 # About page
 about:
@@ -238,10 +242,11 @@ about:
     url:
     title:
 ```
-[点击预览About页面](http://chaoo.oschina.io/about/)
+[Preview the about page demo](http://chaoo.oschina.io/about/)
 
-#### 代码语法高亮
-请在hexo目录的“hexo/_config.yml”中设置“highlight”选项，如下所示：
+#### Syntax Highlighting
+Highlighted code showcase is supported, please set the `highlight` option in `hexo/_config.yml` of hexo directory like this:
+
 ```YAML
 highlight:
   enable: true
@@ -250,12 +255,12 @@ highlight:
   tab_replace:
 ```
 
-#### 本地搜索
-如果要使用本地站点搜索，您必须安装插件[hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content)来创建JSON搜索文件 ，然后将配置添加到`hexo/_config.yml`：
+#### Site Search
+If you want to use local site search,you must install the plug-in [hexo-generator-json-content](https://github.com/alexbruno/hexo-generator-json-content) for create the JSON search file, and then add config to `hexo/_config.yml`
 ```shell
 $ npm install hexo-generator-json-content@2.2.0 --save
 ```
-然后在`hexo/_config.yml`添加配置：
+And then,you must configure this plugin in `hexo/_config.yml`
 ```YAML
 jsonContent:
   meta: false
@@ -277,20 +282,21 @@ jsonContent:
     tags: true
 ```
 
-#### 语言
-该主题目前有七种语言：简体中文（zh-CN），繁体中文（zh-TW），英语（en），法语（fr-FR），德语（de-DE），韩语 （ko）,西班牙语（es-ES）,欢迎修改主题并翻译成其他语言。
+#### Languages
+Seven languages are available for this theme currently: Simplified Chinese (zh-CN), Traditional Chinese (zh-TW), English (en), French (fr-FR), German (de-DE), Korean (ko) and Spanish (es-ES). Contributions of translating to other languages will be highly appreciated.
 
 ## Solutions
-- 检查您当前的hexo的根目录，是否包含`source /`，`themes /`等。
-- 如果你在使用这个主题有任何问题，请随时打开一个[issue](https://github.com/chaooo/hexo-theme-BlueLake/issues)，或者给我发邮件[zhenggchaoo@gmail.com](zhenggchaoo@gmail.com)。
+- Check whether your Terminal's current directory is in hexo's root directory which contains `source/`, `themes/`, etc.
 
-## 浏览器支持
+- If you have any trouble in using this theme, please feel free to open an [issue](https://github.com/chaooo/hexo-theme-BlueLake/issues).
+
+## Browser Support
 ![Imgur](http://i.imgur.com/iO9L5ty.png)
 
 ## License
 [MIT License](LICENSE)
 
-## 贡献
-欢迎各种形式的贡献（增强功能，添加新功能，撰写文档，改进代码，提交问题和检查BUG...）。
+## Contributing
+All kinds of contributions (enhancements, new features, documentation & code improvements, issues & bugs reporting) are welcome.
 
-期待您的pull request。
+Looking forward to your pull request.

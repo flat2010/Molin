@@ -1,0 +1,29 @@
+#footer
+  .footer-info
+    p
+      if theme.baidusitemap
+        a(href=config.root+"baidusitemap.xml")= __("baidusitemap")
+        |  |  
+      if theme.feed
+        a(href=config.root+"atom.xml")= __("rss")
+        |  |  
+      a(href=config.root+"about/")= __("about")
+      //- span 联系博主：
+      //-   a.fa.fa-email(href="mailto:#{theme.about.email}",target="_blank") 
+      //-   a.fa.fa-weibo(href="#{theme.about.weibo_url}",target="_blank")
+      //-   a.fa.fa-github(href="#{theme.about.github_url}",target="_blank") 
+    if theme.busuanzi == true
+      p 本站总访问量：
+        i#busuanzi_container_site_pv
+          i#busuanzi_value_site_pv
+        | 次
+    p
+      span  Copyright &copy;
+        a(href=url_for('.'), rel='nofollow')= (config.author || config.title) + '.'
+      span  Theme by
+        a(rel='nofollow', target='_blank', href='https://github.com/chaooo/hexo-theme-BlueLake')  BlueLake.
+      if theme.busuanzi == true
+        span  Count by
+          a(href="http://busuanzi.ibruce.info/")  busuanzi.
+      span  Powered by
+        a(rel='nofollow', target='_blank', href='https://hexo.io')  Hexo.
