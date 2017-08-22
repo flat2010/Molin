@@ -1,0 +1,26 @@
+block reward
+  .page-reward
+    a(id="a_label" class="page-reward-btn tooltip-top")
+      .tooltip#reward_guide.tooltip-east
+        span(id="btn_guide", href="javascript:;", class="tooltip-item") 打赏
+      script(type='text/javascript').
+          document.getElementById("btn_guide").onclick = function(){
+              document.getElementById("reward_guide").setAttribute("style", "display:none");
+              document.getElementById("a_label").setAttribute("style", "display:none");
+              document.getElementById("img_guide").setAttribute("style", "display:block");
+          }
+    div(id="img_guide", class="tooltip reward-box", style="display:none")
+      table
+        tr
+          td
+            if theme.weixin
+              img(class="reward-img" src="#{theme.weixin}" style="text-align:center;float:center")
+          td
+            if theme.alipay
+              img(class="reward-img" src="#{theme.alipay}" style="text-align:center;float:center")
+    script(type='text/javascript').
+          document.getElementById("img_guide").onclick = function(){
+              document.getElementById("reward_guide").setAttribute("style", "display:inline-block");
+              document.getElementById("a_label").setAttribute("style", "display:inline-block");
+              document.getElementById("img_guide").setAttribute("style", "display:none");
+          }

@@ -139,3 +139,13 @@ mathjax:
   enable: true
   # per_page: true
   cdn: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# 开启打赏功能
+# 0-关闭，1-文章md有reward:true属性的打赏，2-所有文章均有
+reward_type: 2
+# 感激语
+reward_wording: "感谢您的赞赏"
+# 支付宝二维码地址
+alipay: 
+# 微信二维码地址
+weixin: https://flat2010.github.io/about/weixin_qrcode.jpg

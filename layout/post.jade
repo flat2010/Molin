@@ -27,6 +27,10 @@ block content
     .post-share
       include _partial/share
     include _partial/post_nav
+    //新增打赏功能在正文底部
+    if theme.reward_type == 2 || (theme.reward_type == 1 && post.reward)
+      include _partial/reward
+    //end
     #comments
       include _partial/comments
 
