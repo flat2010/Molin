@@ -113,7 +113,7 @@ about:
     url: ## Your email with mailto: e.g.  mailto:zhenggchaoo@gmail.com
     title: 想查水表?
   - label: github
-    url: flat2010.github.io
+    url: https://github.com/flat2010
     title: flat2010
   - label: weibo
     url: 
@@ -138,7 +138,7 @@ links:
 mathjax:
   enable: true
   # per_page: true
-  cdn: http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 # 开启打赏功能
 # 0-关闭，1-文章md有reward:true属性的打赏，2-所有文章均有

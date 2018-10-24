@@ -25,7 +25,9 @@ html(lang='#{config.language}')
     if config.keywords
       meta(name="keywords",content=config.keywords)
     block title
-    link(rel="stylesheet", type="text/css", href="//fonts.css.network/css?family=Source+Code+Pro")
+    // 之前的google字体加载缓慢，换成本地加载
+    //link(rel="stylesheet", type="text/css", href="//fonts.css.network/css?family=Source+Code+Pro")
+    link(rel="stylesheet", href="https://flat2010.github.io/static/vendor/fonts/fonts.css")
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/style.css' + '?v=' + theme.version)
     link(rel='stylesheet', type='text/css', href=url_for(theme.css) + '/highlight.css' + '?v=' + theme.version)
     link(rel='Shortcut Icon', href=url_for('favicon.ico'))
@@ -71,7 +73,7 @@ html(lang='#{config.language}')
     block pageOnly
 
 //为主题添加mathjax支持
-script(type='text/javascript', src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML', async)
+script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML', async)
 script(type='text/x-mathjax-config').
   MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
   tex2jax: { inlineMath: [ ["$", "$"], ["\\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
