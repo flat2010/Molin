@@ -36,7 +36,8 @@ if theme.comment.disqus
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   script(id='dsq-count-scr', src='//#{theme.comment.disqus}.disqus.com/count.js', async)
-  script(type='text/javascript', src='//#{theme.comment.disqus}.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=1&avatar_size=32&excerpt_length=20&hide_mods=1')
+  // 开启下面这条，所有评论会出现在底部，非常难看
+  //script(type='text/javascript', src='//#{theme.comment.disqus}.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=1&avatar_size=32&excerpt_length=20&hide_mods=1')
 
 if theme.comment.livere
   script.
