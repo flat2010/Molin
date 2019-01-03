@@ -35,14 +35,19 @@ block content
       include _partial/comments
 
 block tocmodel
-  if theme.toc.enable == true 
+  if theme.toc.enable == true
     .widget(id='toc')
       .widget-title
         i(class='fa fa-fei')= __('contents')
       != toc(page.content, {list_number: theme.toc.number})
 
 block pageOnly
-  if theme.toc.enable == true 
+  if theme.toc.enable == true
+    // tocfold.js中需要用到jquery
+    script(type='text/javascript', src="http://code.jquery.com/jquery-1.7.1.min.js", async)
+    // 控制文章目录折叠特性的脚本
+    script(type='text/javascript', src=url_for(theme.js) + '/tocfold.js' + '?v=' + theme.version, async) 
+    // 返回文章顶部的脚本 
     script(type='text/javascript', src=url_for(theme.js) + '/toctotop.js' + '?v=' + theme.version, async)
   else 
     script(type='text/javascript', src=url_for(theme.js) + '/totop.js' + '?v=' + theme.version, async)
