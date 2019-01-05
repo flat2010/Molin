@@ -22,3 +22,6 @@ belongsto: Categorized in
 contents: Contents
 shareto: Share
 reading_label: Reading articles in
+word_counts: words
+read_times: min
+total_counts: words

@@ -21,12 +21,35 @@ block content
             i#busuanzi_container_page_pv
               i#busuanzi_value_page_pv
               i= '' + __('hits')
+        // 增加文章字数统计
+        if theme.post_wordcount.word_count == true
+            span
+                i#word_count
+                i=wordcount(page.content) + ' ' + __('word_counts')
+        if theme.post_wordcount.read_time == true
+            span
+                i#read_time
+                i=min2read(page.content) + ' ' + __('read_times')
+    // 正文内容        
     .post-content
       != page.content
+    
+    // 正文结束标志         
+    //标记内容的显示格式，定义在style.style中
+    .end-of-content
+      //要显示的内容
+      include _partial/end_content_tag  
+    
+    // 文末文章标签
     include _partial/tag
+    
+    // 分享文章
     .post-share
       include _partial/share
+    
+    // 站内导航
     include _partial/post_nav
+    
     //新增打赏功能在正文底部
     if theme.reward_type == 2 || (theme.reward_type == 1 && post.reward)
       include _partial/reward

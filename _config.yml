@@ -105,6 +105,15 @@ busuanzi: true ## If you want to use Busuanzi page views please set the value to
 # Enable show category count
 show_count: true
 
+# WordCount
+post_wordcount:
+  word_count: true  ## word counts of content
+  read_time: true   ## minimum read time
+  total_words: true ## total words of all the blogs
+
+# endtag of content
+end_content_tag: true
+
 # About page
 about:
   photo_url: me.jpg

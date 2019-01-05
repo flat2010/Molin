@@ -449,6 +449,25 @@ body
       //在文章阅读次数和"阅读"之间添加一个空格
       &:after
         content: " "
+    #word_count
+      height:16px
+      line-height 16px
+      &:before
+        font-family: "iconfont"!important
+        content: "\e015"
+        padding-right: 0.3em
+      &:after
+        content: " "
+    #read_time
+      height:16px
+      line-height 16px
+      &:before
+        font-family: "iconfont"!important
+        content: "\e011"
+        padding-right: 0.3em
+      &:after
+        content: " "
+    
   .comment-count
     float: right
     display: inline-block
@@ -569,6 +588,15 @@ body
         font-family: "iconfont"!important
         content: "\e008"
         padding-right: 0.3em
+   
+   // 文章结尾标记
+  .end-of-content
+    margin-top: 2em
+    margin-bottom: 2em
+    text-align: center
+    color: #FF33CC
+    font-size: 18px
+
   .post-share::after
     content: ' '
     display: block

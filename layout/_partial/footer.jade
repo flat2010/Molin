@@ -11,7 +11,11 @@
       //- span 联系博主：
       //-   a.fa.fa-email(href="mailto:#{theme.about.email}",target="_blank") 
       //-   a.fa.fa-weibo(href="#{theme.about.weibo_url}",target="_blank")
-      //-   a.fa.fa-github(href="#{theme.about.github_url}",target="_blank") 
+      //-   a.fa.fa-github(href="#{theme.about.github_url}",target="_blank")
+    // 首页底部显示网站总字数
+    if theme.post_wordcount.total_words == true
+      p 本站博客总字数：
+        i=totalcount(site) + ' ' + __('total_counts')
     if theme.busuanzi == true
       p 本站访客总数：
         i#busuanzi_container_site_uv
