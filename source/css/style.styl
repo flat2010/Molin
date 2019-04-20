@@ -2,7 +2,7 @@
 bottom-border = #ddd
 table-border-width = 3px
 
-body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,img,blockquote,button,pre,fieldset,form,input,select,option
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,p,img,blockquote,button,pre,fieldset,form,input,select,option,
   margin: 0
   padding: 0
   border: 0
@@ -550,6 +550,62 @@ body
         margin-top: 0.1em
         position: relative
         text-align: center
+    // 新增单行引用模块样式，跟多行单独设置是因为两者表现不一致(2019-04-20)
+    singlerefblock
+        margin: 5px 5px 0px 0px;
+        background-color: rgba(235,235,235,0.5);
+        padding: 3px 10px;
+        border-radius: 9px;
+        border-left: 5px solid #FF83FA;
+        border-right: 5px solid #FF83FA;
+        word-wrap: break-all;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 15px;
+        margin-inline-end: 40px;
+    // 新增引用模块样式(2019-04-20)
+    multirefblock
+        margin: 5px 5px 0px 0px;
+        background-color: rgba(235,235,235,0.5);
+        padding: 3px 10px;
+        border-radius: 16px;
+        border-left: 7px solid #FF83FA;
+        border-right: 7px solid #FF83FA;
+        word-wrap: break-all;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        //内部显示文本行首缩进
+        margin-inline-start: 15px;
+        margin-inline-end: 40px;
+    //新增居中带渐变色背景的标题(2019-04-20)
+    centerhead
+        display: block;
+        font-weight: 300;
+        background-image: linear-gradient(to right,#fff, #8BC34A, #4CAF50, #8BC34A, #FFF);
+        background-color: #4CAF50;
+        color: #FFF;
+        font-size: 1.4em;
+        line-height: 1.6em;
+        margin: 14px 10px;
+        padding: 10px 0;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 1px #666;
+        text-align: center;
+        opacity: 0.8;
+    //新增带下划线的引用(2019-04-20)
+    underline-quote
+        display: block;
+        font-weight: 500;
+        color: #000;
+        font-size: 1.0em;
+        line-height: 1.0em;
+        margin: 8px 10% 8px 0;
+        padding: 6px 10px 4px 15px;
+        letter-spacing: 1px;
+        border-left: solid #333 3px;
+        border-bottom: solid #4CAF50 1px;
     blockquote,.stressed
       p 
         margin: 0
